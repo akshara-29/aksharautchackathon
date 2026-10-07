@@ -1,0 +1,1262 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentOS | AI Agent Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div>
+                <h2>AgentOS</h2>
+                <span>AI Management</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <p class="nav-title">MAIN</p>
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-page="agents">
+                <span>◉</span>
+                AI Agents
+            </button>
+
+            <button class="nav-item" data-page="tasks">
+                <span>✓</span>
+                Task Queue
+                <b>8</b>
+            </button>
+
+            <button class="nav-item" data-page="activity">
+                <span>◌</span>
+                Activity Log
+            </button>
+
+            <button class="nav-item" data-page="history">
+                <span>◷</span>
+                Execution History
+            </button>
+
+            <p class="nav-title">MANAGE</p>
+
+            <button class="nav-item" data-page="builder">
+                <span>＋</span>
+                Agent Builder
+            </button>
+
+            <button class="nav-item" data-page="approvals">
+                <span>◇</span>
+                Approvals
+                <b class="warning">3</b>
+            </button>
+
+            <button class="nav-item" data-page="settings">
+                <span>⚙</span>
+                Configuration
+            </button>
+
+        </nav>
+
+        <div class="workspace">
+            <div class="workspace-avatar">AU</div>
+
+            <div>
+                <strong>AI Workspace</strong>
+                <small>Team workspace</small>
+            </div>
+
+            <span>•••</span>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <span class="breadcrumb">Workspace / AgentOS</span>
+                <h1 id="pageTitle">AI Agent Dashboard</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-btn">⌕</button>
+
+                <button class="icon-btn notification">
+                    ♢
+                    <i></i>
+                </button>
+
+                <div class="user">
+                    <div class="user-avatar">AU</div>
+                    <div>
+                        <strong>Akshara</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="page active" id="dashboard">
+
+            <div class="welcome">
+
+                <div>
+                    <span class="eyebrow">AI OPERATIONS CENTER</span>
+
+                    <h2>
+                        Manage your AI workforce
+                    </h2>
+
+                    <p>
+                        Monitor agents, tasks, executions and
+                        approvals from one intelligent workspace.
+                    </p>
+                </div>
+
+                <button class="primary-btn" id="openBuilder">
+                    + Create Agent
+                </button>
+
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">◉</div>
+                    <span>Active Agents</span>
+                    <strong>12</strong>
+                    <small class="positive">↑ 16.7% this week</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">↻</div>
+                    <span>Running Tasks</span>
+                    <strong>28</strong>
+                    <small class="positive">↑ 8.4% today</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <span>Success Rate</span>
+                    <strong>98.4%</strong>
+                    <small class="positive">↑ 1.2% performance</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">!</div>
+                    <span>Needs Attention</span>
+                    <strong>3</strong>
+                    <small class="negative">2 errors · 1 approval</small>
+                </div>
+
+            </div>
+
+
+            <!-- TWO COLUMN -->
+
+            <div class="two-column">
+
+                <!-- AGENTS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>AI Agents</h3>
+                            <p>Your active digital workforce</p>
+                        </div>
+
+                        <button class="link-btn" data-page-link="agents">
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div class="agent-list">
+
+                        <div class="agent-row">
+
+                            <div class="agent-avatar research">R</div>
+
+                            <div class="agent-info">
+                                <strong>Research Agent</strong>
+                                <span>Market intelligence</span>
+                            </div>
+
+                            <span class="status running">
+                                <i></i> Running
+                            </span>
+
+                            <strong>4</strong>
+
+                        </div>
+
+
+                        <div class="agent-row">
+
+                            <div class="agent-avatar support">S</div>
+
+                            <div class="agent-info">
+                                <strong>Support Agent</strong>
+                                <span>Customer support</span>
+                            </div>
+
+                            <span class="status running">
+                                <i></i> Running
+                            </span>
+
+                            <strong>7</strong>
+
+                        </div>
+
+
+                        <div class="agent-row">
+
+                            <div class="agent-avatar content">C</div>
+
+                            <div class="agent-info">
+                                <strong>Content Agent</strong>
+                                <span>Content generation</span>
+                            </div>
+
+                            <span class="status idle">
+                                <i></i> Idle
+                            </span>
+
+                            <strong>0</strong>
+
+                        </div>
+
+
+                        <div class="agent-row">
+
+                            <div class="agent-avatar data">D</div>
+
+                            <div class="agent-info">
+                                <strong>Data Agent</strong>
+                                <span>Data processing</span>
+                            </div>
+
+                            <span class="status running">
+                                <i></i> Running
+                            </span>
+
+                            <strong>3</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIVE ACTIVITY -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Live Activity</h3>
+                            <p>Recent agent events</p>
+                        </div>
+
+                        <span class="live">● LIVE</span>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity">
+                            <span class="activity-icon success">✓</span>
+
+                            <div>
+                                <strong>Research Agent</strong>
+                                <p>Completed market analysis</p>
+                                <small>2 min ago</small>
+                            </div>
+                        </div>
+
+
+                        <div class="activity">
+                            <span class="activity-icon blue">↻</span>
+
+                            <div>
+                                <strong>Support Agent</strong>
+                                <p>Started ticket classification</p>
+                                <small>5 min ago</small>
+                            </div>
+                        </div>
+
+
+                        <div class="activity">
+                            <span class="activity-icon warning">!</span>
+
+                            <div>
+                                <strong>Content Agent</strong>
+                                <p>Waiting for approval</p>
+                                <small>8 min ago</small>
+                            </div>
+                        </div>
+
+
+                        <div class="activity">
+                            <span class="activity-icon purple">↗</span>
+
+                            <div>
+                                <strong>Data Agent</strong>
+                                <p>Processed 2,430 records</p>
+                                <small>12 min ago</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXECUTION TIMELINE -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Agent Execution Timeline</h3>
+                        <p>Recent workflow executions</p>
+                    </div>
+
+                    <select>
+                        <option>Last 24 hours</option>
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                    </select>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <div class="timeline-row">
+
+                        <span class="time">10:42 PM</span>
+
+                        <span class="timeline-dot success">✓</span>
+
+                        <div>
+                            <strong>Customer Support Workflow</strong>
+                            <p>
+                                Support Agent → Response Generator
+                                → Human Approval
+                            </p>
+                        </div>
+
+                        <span class="complete">Completed</span>
+
+                    </div>
+
+
+                    <div class="timeline-row">
+
+                        <span class="time">10:31 PM</span>
+
+                        <span class="timeline-dot success">✓</span>
+
+                        <div>
+                            <strong>Market Research Workflow</strong>
+                            <p>
+                                Research Agent → Analyzer
+                                → Report Generator
+                            </p>
+                        </div>
+
+                        <span class="complete">Completed</span>
+
+                    </div>
+
+
+                    <div class="timeline-row">
+
+                        <span class="time">10:18 PM</span>
+
+                        <span class="timeline-dot running">↻</span>
+
+                        <div>
+                            <strong>Data Processing Workflow</strong>
+                            <p>
+                                Data Agent → Validator → Database
+                            </p>
+                        </div>
+
+                        <span class="in-progress">Running</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= AGENTS ================= -->
+
+        <section class="page" id="agents">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">AGENT MANAGEMENT</span>
+
+                    <h2>AI Agents</h2>
+
+                    <p>
+                        Create, configure and monitor your
+                        intelligent agents.
+                    </p>
+                </div>
+
+                <button class="primary-btn">
+                    + Create Agent
+                </button>
+
+            </div>
+
+
+            <div class="agent-grid">
+
+                <article class="agent-card">
+
+                    <div class="agent-card-top">
+                        <div class="agent-avatar research">R</div>
+
+                        <span class="status running">
+                            <i></i> Running
+                        </span>
+                    </div>
+
+                    <h3>Research Agent</h3>
+
+                    <p>
+                        Collects and analyzes market intelligence.
+                    </p>
+
+                    <div class="metrics">
+                        <span><strong>124</strong> Runs</span>
+                        <span><strong>98.8%</strong> Success</span>
+                        <span><strong>4</strong> Tasks</span>
+                    </div>
+
+                    <button class="secondary-btn">
+                        View Profile
+                    </button>
+
+                </article>
+
+
+                <article class="agent-card">
+
+                    <div class="agent-card-top">
+                        <div class="agent-avatar support">S</div>
+
+                        <span class="status running">
+                            <i></i> Running
+                        </span>
+                    </div>
+
+                    <h3>Support Agent</h3>
+
+                    <p>
+                        Handles customer conversations and tickets.
+                    </p>
+
+                    <div class="metrics">
+                        <span><strong>342</strong> Runs</span>
+                        <span><strong>99.2%</strong> Success</span>
+                        <span><strong>7</strong> Tasks</span>
+                    </div>
+
+                    <button class="secondary-btn">
+                        View Profile
+                    </button>
+
+                </article>
+
+
+                <article class="agent-card">
+
+                    <div class="agent-card-top">
+                        <div class="agent-avatar content">C</div>
+
+                        <span class="status idle">
+                            <i></i> Idle
+                        </span>
+                    </div>
+
+                    <h3>Content Agent</h3>
+
+                    <p>
+                        Creates and optimizes marketing content.
+                    </p>
+
+                    <div class="metrics">
+                        <span><strong>87</strong> Runs</span>
+                        <span><strong>97.5%</strong> Success</span>
+                        <span><strong>0</strong> Tasks</span>
+                    </div>
+
+                    <button class="secondary-btn">
+                        View Profile
+                    </button>
+
+                </article>
+
+
+                <article class="agent-card">
+
+                    <div class="agent-card-top">
+                        <div class="agent-avatar data">D</div>
+
+                        <span class="status running">
+                            <i></i> Running
+                        </span>
+                    </div>
+
+                    <h3>Data Agent</h3>
+
+                    <p>
+                        Processes and validates large datasets.
+                    </p>
+
+                    <div class="metrics">
+                        <span><strong>218</strong> Runs</span>
+                        <span><strong>99.6%</strong> Success</span>
+                        <span><strong>3</strong> Tasks</span>
+                    </div>
+
+                    <button class="secondary-btn">
+                        View Profile
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TASK QUEUE ================= -->
+
+        <section class="page" id="tasks">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">TASK MANAGEMENT</span>
+
+                    <h2>Agent Task Queue</h2>
+
+                    <p>
+                        Monitor tasks currently handled by agents.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="panel table-panel">
+
+                <div class="toolbar">
+
+                    <input
+                        type="search"
+                        placeholder="Search tasks..."
+                    >
+
+                    <select>
+                        <option>All Statuses</option>
+                        <option>Running</option>
+                        <option>Queued</option>
+                        <option>Completed</option>
+                        <option>Failed</option>
+                    </select>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Task</th>
+                            <th>Agent</th>
+                            <th>Priority</th>
+                            <th>Started</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <strong>Analyze competitor pricing</strong>
+                            </td>
+
+                            <td>Research Agent</td>
+
+                            <td>
+                                <span class="priority high">
+                                    High
+                                </span>
+                            </td>
+
+                            <td>10:42 PM</td>
+
+                            <td>
+                                <span class="status running">
+                                    <i></i> Running
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>Classify support tickets</strong>
+                            </td>
+
+                            <td>Support Agent</td>
+
+                            <td>
+                                <span class="priority medium">
+                                    Medium
+                                </span>
+                            </td>
+
+                            <td>10:39 PM</td>
+
+                            <td>
+                                <span class="status running">
+                                    <i></i> Running
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <strong>Generate weekly report</strong>
+                            </td>
+
+                            <td>Data Agent</td>
+
+                            <td>
+                                <span class="priority low">
+                                    Low
+                                </span>
+                            </td>
+
+                            <td>10:35 PM</td>
+
+                            <td>
+                                <span class="status idle">
+                                    <i></i> Queued
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ACTIVITY ================= -->
+
+        <section class="page" id="activity">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">AUDIT LOG</span>
+
+                    <h2>Activity Log</h2>
+
+                    <p>
+                        Complete record of agent activity.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="panel activity-full">
+
+                <div class="log-item">
+
+                    <time>22:42:18</time>
+
+                    <span class="activity-icon success">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Research Agent completed execution
+                        </strong>
+
+                        <p>
+                            Market analysis workflow completed.
+                        </p>
+                    </div>
+
+                    <span class="log-success">
+                        SUCCESS
+                    </span>
+
+                </div>
+
+
+                <div class="log-item">
+
+                    <time>22:39:04</time>
+
+                    <span class="activity-icon blue">
+                        ↻
+                    </span>
+
+                    <div>
+                        <strong>
+                            Support Agent started task
+                        </strong>
+
+                        <p>
+                            Processing customer support tickets.
+                        </p>
+                    </div>
+
+                    <span class="log-running">
+                        RUNNING
+                    </span>
+
+                </div>
+
+
+                <div class="log-item">
+
+                    <time>22:31:52</time>
+
+                    <span class="activity-icon warning">
+                        !
+                    </span>
+
+                    <div>
+                        <strong>
+                            Approval required
+                        </strong>
+
+                        <p>
+                            Content Agent requires human review.
+                        </p>
+                    </div>
+
+                    <span class="log-warning">
+                        WAITING
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= HISTORY ================= -->
+
+        <section class="page" id="history">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">EXECUTION LOG</span>
+
+                    <h2>Execution History</h2>
+
+                    <p>
+                        Review previous agent executions.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="panel table-panel">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Execution</th>
+                            <th>Agent</th>
+                            <th>Duration</th>
+                            <th>Time</th>
+                            <th>Result</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><strong>Market Analysis</strong></td>
+                            <td>Research Agent</td>
+                            <td>12.4s</td>
+                            <td>10:42 PM</td>
+                            <td>
+                                <span class="result-success">
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Ticket Classification</strong></td>
+                            <td>Support Agent</td>
+                            <td>4.8s</td>
+                            <td>10:39 PM</td>
+                            <td>
+                                <span class="result-success">
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Content Generation</strong></td>
+                            <td>Content Agent</td>
+                            <td>8.7s</td>
+                            <td>10:31 PM</td>
+                            <td>
+                                <span class="result-warning">
+                                    Approval
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= BUILDER ================= -->
+
+        <section class="page" id="builder">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">AGENT CREATION</span>
+
+                    <h2>Agent Builder</h2>
+
+                    <p>
+                        Configure your next intelligent agent.
+                    </p>
+                </div>
+
+                <button class="primary-btn">
+                    Deploy Agent
+                </button>
+
+            </div>
+
+
+            <div class="builder-grid">
+
+                <div class="panel builder-form">
+
+                    <label>Agent Name</label>
+
+                    <input
+                        type="text"
+                        placeholder="Research Assistant"
+                    >
+
+
+                    <label>Description</label>
+
+                    <textarea
+                        placeholder="Describe what your agent should do..."
+                    ></textarea>
+
+
+                    <label>AI Model</label>
+
+                    <select>
+
+                        <option>
+                            Advanced Reasoning Model
+                        </option>
+
+                        <option>
+                            Fast General Model
+                        </option>
+
+                        <option>
+                            Code Specialist Model
+                        </option>
+
+                    </select>
+
+
+                    <label>Permissions</label>
+
+
+                    <div class="permission">
+
+                        <span>Read data sources</span>
+
+                        <input type="checkbox" checked>
+
+                    </div>
+
+
+                    <div class="permission">
+
+                        <span>Execute workflows</span>
+
+                        <input type="checkbox" checked>
+
+                    </div>
+
+
+                    <div class="permission">
+
+                        <span>Require human approval</span>
+
+                        <input type="checkbox">
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel preview">
+
+                    <span>AGENT PREVIEW</span>
+
+                    <div class="preview-icon">✦</div>
+
+                    <h3>New AI Agent</h3>
+
+                    <p>
+                        Your configured agent will appear here.
+                    </p>
+
+                    <strong class="ready">
+                        ● Ready to deploy
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= APPROVALS ================= -->
+
+        <section class="page" id="approvals">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">HUMAN CONTROL</span>
+
+                    <h2>Approval Center</h2>
+
+                    <p>
+                        Review actions that require human approval.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="approval-grid">
+
+                <article class="approval-card">
+
+                    <span class="approval-label">
+                        HIGH PRIORITY
+                    </span>
+
+                    <h3>
+                        Send customer compensation email
+                    </h3>
+
+                    <p>
+                        Support Agent wants to issue ₹5,000
+                        compensation.
+                    </p>
+
+                    <div class="approval-agent">
+
+                        <div class="agent-avatar support">
+                            S
+                        </div>
+
+                        <strong>Support Agent</strong>
+
+                    </div>
+
+                    <div class="approval-actions">
+
+                        <button class="approve">
+                            Approve
+                        </button>
+
+                        <button class="reject">
+                            Reject
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="approval-card">
+
+                    <span class="approval-label normal">
+                        REVIEW
+                    </span>
+
+                    <h3>
+                        Publish generated article
+                    </h3>
+
+                    <p>
+                        Content Agent created an article
+                        requiring approval.
+                    </p>
+
+                    <div class="approval-agent">
+
+                        <div class="agent-avatar content">
+                            C
+                        </div>
+
+                        <strong>Content Agent</strong>
+
+                    </div>
+
+                    <div class="approval-actions">
+
+                        <button class="approve">
+                            Approve
+                        </button>
+
+                        <button class="reject">
+                            Reject
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SETTINGS ================= -->
+
+        <section class="page" id="settings">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">SYSTEM CONTROL</span>
+
+                    <h2>Agent Configuration</h2>
+
+                    <p>
+                        Manage permissions and execution policies.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="panel settings">
+
+                <div class="setting">
+
+                    <div>
+                        <strong>Human approval workflow</strong>
+                        <p>
+                            Require approval for high-impact actions.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="setting">
+
+                    <div>
+                        <strong>Automatic retry</strong>
+                        <p>
+                            Retry failed agent executions.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="setting">
+
+                    <div>
+                        <strong>Execution logging</strong>
+                        <p>
+                            Store detailed execution history.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="setting">
+
+                    <div>
+                        <strong>Multi-agent orchestration</strong>
+                        <p>
+                            Allow agents to trigger other agents.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- CREATE AGENT MODAL -->
+
+<div class="modal" id="agentModal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="closeModal">
+            ×
+        </button>
+
+        <div class="modal-icon">✦</div>
+
+        <h2>Create AI Agent</h2>
+
+        <p>
+            Configure a new agent for your workspace.
+        </p>
+
+        <input
+            type="text"
+            placeholder="Agent name"
+        >
+
+        <input
+            type="text"
+            placeholder="Agent purpose"
+        >
+
+        <button class="primary-btn full">
+            Create Agent
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

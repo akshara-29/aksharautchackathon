@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentFlow - AI Workflow Automation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+                <h2>Agent<span>Flow</span></h2>
+                <small>AI Automation</small>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <span>WORKSPACE</span>
+            <div class="workspace-box">
+                <div class="workspace-avatar">A</div>
+                <div>
+                    <strong>AI Team</strong>
+                    <small>Workspace</small>
+                </div>
+                <b>⌄</b>
+            </div>
+        </div>
+
+        <nav>
+
+            <div class="nav-label">MAIN</div>
+
+            <div class="nav-item active" data-section="overview">
+                <span>⌂</span> Overview
+            </div>
+
+            <div class="nav-item" data-section="workflows">
+                <span>◈</span> Workflows
+            </div>
+
+            <div class="nav-item" data-section="builder">
+                <span>⌘</span> Workflow Builder
+            </div>
+
+            <div class="nav-item" data-section="agents">
+                <span>◎</span> AI Agents
+            </div>
+
+            <div class="nav-label">MONITORING</div>
+
+            <div class="nav-item" data-section="runs">
+                <span>▶</span> Workflow Runs
+            </div>
+
+            <div class="nav-item" data-section="approvals">
+                <span>✓</span> Approvals
+                <em>3</em>
+            </div>
+
+            <div class="nav-item" data-section="errors">
+                <span>!</span> Errors & Retry
+            </div>
+
+            <div class="nav-label">SYSTEM</div>
+
+            <div class="nav-item" data-section="integrations">
+                <span>⊕</span> Integrations
+            </div>
+
+            <div class="nav-item" data-section="settings">
+                <span>⚙</span> Settings
+            </div>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="user">
+                <div class="user-avatar">AU</div>
+                <div>
+                    <strong>Akshara</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Workspace / Automation</p>
+                <h1 id="pageTitle">Automation Overview</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="search">
+                    🔍
+                    <input type="text" placeholder="Search workflows...">
+                    <kbd>⌘ K</kbd>
+                </div>
+
+                <button class="notification-btn">
+                    🔔
+                    <span></span>
+                </button>
+
+                <button class="create-btn" onclick="openModal()">
+                    + New Workflow
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="section active">
+
+            <div class="welcome">
+
+                <div>
+                    <p class="eyebrow">GOOD EVENING, AKSHARA</p>
+                    <h2>Automate your work with intelligent agents.</h2>
+                    <p>
+                        Build powerful workflows by connecting AI agents,
+                        triggers, actions and human approvals.
+                    </p>
+                </div>
+
+                <div class="welcome-orb">
+                    ✦
+                </div>
+
+            </div>
+
+
+            <!-- Stats -->
+
+            <div class="stats">
+
+                <div class="stat">
+                    <div class="stat-icon purple">◈</div>
+                    <span>Active Workflows</span>
+                    <strong>24</strong>
+                    <small>↑ 12% this month</small>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon blue">▶</div>
+                    <span>Runs Today</span>
+                    <strong>1,284</strong>
+                    <small>↑ 18% vs yesterday</small>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon green">✓</div>
+                    <span>Success Rate</span>
+                    <strong>97.8%</strong>
+                    <small>↑ 1.4% this week</small>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon orange">⚡</div>
+                    <span>Time Saved</span>
+                    <strong>86h</strong>
+                    <small>this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <!-- Recent Workflows -->
+
+                <div class="panel workflow-panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Workflows</h3>
+                            <p>Your most recently updated automations</p>
+                        </div>
+
+                        <button onclick="showSection('workflows')">
+                            View all →
+                        </button>
+                    </div>
+
+                    <div class="workflow-list">
+
+                        <div class="workflow-row">
+
+                            <div class="workflow-logo purple-bg">✉</div>
+
+                            <div class="workflow-info">
+                                <strong>Email Support Automation</strong>
+                                <span>Support Agent → Email Agent → CRM</span>
+                            </div>
+
+                            <div class="run-status active-status">
+                                <i></i> Active
+                            </div>
+
+                            <div class="runs">428 runs</div>
+
+                            <div class="more">•••</div>
+
+                        </div>
+
+
+                        <div class="workflow-row">
+
+                            <div class="workflow-logo blue-bg">◉</div>
+
+                            <div class="workflow-info">
+                                <strong>Lead Qualification</strong>
+                                <span>Lead Agent → Scoring → Sales Agent</span>
+                            </div>
+
+                            <div class="run-status active-status">
+                                <i></i> Active
+                            </div>
+
+                            <div class="runs">315 runs</div>
+
+                            <div class="more">•••</div>
+
+                        </div>
+
+
+                        <div class="workflow-row">
+
+                            <div class="workflow-logo orange-bg">◆</div>
+
+                            <div class="workflow-info">
+                                <strong>Content Research Pipeline</strong>
+                                <span>Researcher → Writer → Reviewer</span>
+                            </div>
+
+                            <div class="run-status paused-status">
+                                <i></i> Paused
+                            </div>
+
+                            <div class="runs">192 runs</div>
+
+                            <div class="more">•••</div>
+
+                        </div>
+
+
+                        <div class="workflow-row">
+
+                            <div class="workflow-logo green-bg">↗</div>
+
+                            <div class="workflow-info">
+                                <strong>Daily Analytics Report</strong>
+                                <span>Data Agent → Analyst → Reporter</span>
+                            </div>
+
+                            <div class="run-status active-status">
+                                <i></i> Active
+                            </div>
+
+                            <div class="runs">149 runs</div>
+
+                            <div class="more">•••</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Live Runs -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Live Executions</h3>
+                            <p>Workflows running right now</p>
+                        </div>
+
+                        <span class="live-dot">● LIVE</span>
+                    </div>
+
+                    <div class="execution">
+
+                        <div class="execution-icon">✉</div>
+
+                        <div>
+                            <strong>Email Support</strong>
+                            <span>Processing customer request...</span>
+
+                            <div class="progress">
+                                <div style="width:72%"></div>
+                            </div>
+                        </div>
+
+                        <b>72%</b>
+
+                    </div>
+
+
+                    <div class="execution">
+
+                        <div class="execution-icon">◉</div>
+
+                        <div>
+                            <strong>Lead Qualification</strong>
+                            <span>Analyzing lead score...</span>
+
+                            <div class="progress">
+                                <div style="width:45%"></div>
+                            </div>
+                        </div>
+
+                        <b>45%</b>
+
+                    </div>
+
+
+                    <div class="execution">
+
+                        <div class="execution-icon">◆</div>
+
+                        <div>
+                            <strong>Content Pipeline</strong>
+                            <span>Waiting for approval...</span>
+
+                            <div class="progress">
+                                <div style="width:88%"></div>
+                            </div>
+                        </div>
+
+                        <b>88%</b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom -->
+
+            <div class="bottom-grid">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Agent Network</h3>
+                            <p>Agents participating in workflows</p>
+                        </div>
+                    </div>
+
+                    <div class="agent-network">
+
+                        <div class="network-agent">
+                            <div class="agent-avatar purple-bg">R</div>
+                            <strong>Researcher</strong>
+                            <span>12 workflows</span>
+                            <i class="online"></i>
+                        </div>
+
+                        <div class="network-agent">
+                            <div class="agent-avatar blue-bg">W</div>
+                            <strong>Writer</strong>
+                            <span>8 workflows</span>
+                            <i class="online"></i>
+                        </div>
+
+                        <div class="network-agent">
+                            <div class="agent-avatar green-bg">A</div>
+                            <strong>Analyst</strong>
+                            <span>15 workflows</span>
+                            <i class="online"></i>
+                        </div>
+
+                        <div class="network-agent">
+                            <div class="agent-avatar orange-bg">S</div>
+                            <strong>Support</strong>
+                            <span>6 workflows</span>
+                            <i class="offline"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3>Pending Approvals</h3>
+                            <p>Human-in-the-loop actions</p>
+                        </div>
+
+                        <span class="approval-count">3</span>
+                    </div>
+
+                    <div class="approval-item">
+                        <span class="approval-icon">⚠</span>
+                        <div>
+                            <strong>Publish Article</strong>
+                            <small>Content Pipeline</small>
+                        </div>
+                        <button>Review</button>
+                    </div>
+
+                    <div class="approval-item">
+                        <span class="approval-icon">💰</span>
+                        <div>
+                            <strong>Approve Refund</strong>
+                            <small>Support Automation</small>
+                        </div>
+                        <button>Review</button>
+                    </div>
+
+                    <div class="approval-item">
+                        <span class="approval-icon">📄</span>
+                        <div>
+                            <strong>Send Contract</strong>
+                            <small>Sales Workflow</small>
+                        </div>
+                        <button>Review</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WORKFLOWS -->
+        <section id="workflows" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>All Workflows</h2>
+                    <p>Manage and monitor your automation workflows.</p>
+                </div>
+
+                <button class="create-btn" onclick="openModal()">
+                    + Create Workflow
+                </button>
+            </div>
+
+            <div class="workflow-cards">
+
+                <div class="workflow-card">
+                    <div class="workflow-card-icon purple-bg">✉</div>
+                    <h3>Email Support Automation</h3>
+                    <p>Automatically classify, answer and route customer emails.</p>
+
+                    <div class="flow-mini">
+                        <span>Trigger</span>
+                        →
+                        <span>Support AI</span>
+                        →
+                        <span>Email</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="active-text">● Active</span>
+                        <span>428 runs</span>
+                    </div>
+                </div>
+
+
+                <div class="workflow-card">
+                    <div class="workflow-card-icon blue-bg">◉</div>
+                    <h3>Lead Qualification</h3>
+                    <p>Analyze new leads and automatically route qualified prospects.</p>
+
+                    <div class="flow-mini">
+                        <span>Lead</span>
+                        →
+                        <span>Scorer</span>
+                        →
+                        <span>Sales</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="active-text">● Active</span>
+                        <span>315 runs</span>
+                    </div>
+                </div>
+
+
+                <div class="workflow-card">
+                    <div class="workflow-card-icon orange-bg">◆</div>
+                    <h3>Content Research Pipeline</h3>
+                    <p>Research topics, generate drafts and send them for approval.</p>
+
+                    <div class="flow-mini">
+                        <span>Research</span>
+                        →
+                        <span>Writer</span>
+                        →
+                        <span>Review</span>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="paused-text">● Paused</span>
+                        <span>192 runs</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BUILDER -->
+        <section id="builder" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Workflow Builder</h2>
+                    <p>Design intelligent multi-agent automation.</p>
+                </div>
+
+                <div>
+                    <button class="secondary-btn">Save Draft</button>
+                    <button class="create-btn">▶ Run Test</button>
+                </div>
+            </div>
+
+
+            <div class="builder">
+
+                <aside class="builder-tools">
+
+                    <h3>Components</h3>
+
+                    <p>TRIGGERS</p>
+
+                    <div class="tool">⚡ Schedule</div>
+                    <div class="tool">◉ Webhook</div>
+                    <div class="tool">✉ New Email</div>
+
+                    <p>AI AGENTS</p>
+
+                    <div class="tool">🤖 Research Agent</div>
+                    <div class="tool">✍ Writer Agent</div>
+                    <div class="tool">📊 Analyst Agent</div>
+
+                    <p>ACTIONS</p>
+
+                    <div class="tool">📨 Send Email</div>
+                    <div class="tool">💾 Save Data</div>
+                    <div class="tool">🔔 Notification</div>
+
+                    <p>CONTROL</p>
+
+                    <div class="tool">🔀 Condition</div>
+                    <div class="tool">👤 Human Approval</div>
+
+                </aside>
+
+
+                <div class="builder-canvas">
+
+                    <div class="canvas-label">WORKFLOW CANVAS</div>
+
+                    <div class="node trigger-node">
+                        <span>⚡</span>
+                        <div>
+                            <small>TRIGGER</small>
+                            <strong>New Customer Email</strong>
+                        </div>
+                    </div>
+
+                    <div class="connector">↓</div>
+
+                    <div class="node">
+                        <span>🤖</span>
+                        <div>
+                            <small>AI AGENT</small>
+                            <strong>Support Agent</strong>
+                        </div>
+                        <b>•••</b>
+                    </div>
+
+                    <div class="connector">↓</div>
+
+                    <div class="node">
+                        <span>🔀</span>
+                        <div>
+                            <small>CONDITION</small>
+                            <strong>Urgent Request?</strong>
+                        </div>
+                    </div>
+
+                    <div class="branches">
+
+                        <div>
+                            <label>YES</label>
+                            <div class="node small-node">
+                                <span>👤</span>
+                                <strong>Human Approval</strong>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label>NO</label>
+                            <div class="node small-node">
+                                <span>✉</span>
+                                <strong>Send Response</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <aside class="node-settings">
+
+                    <h3>Node Settings</h3>
+
+                    <div class="selected-node">
+                        <span>🤖</span>
+                        <div>
+                            <strong>Support Agent</strong>
+                            <small>AI Agent</small>
+                        </div>
+                    </div>
+
+                    <label>Agent Model</label>
+                    <select>
+                        <option>GPT-5.6</option>
+                        <option>GPT-5</option>
+                        <option>Claude Sonnet</option>
+                    </select>
+
+                    <label>Temperature</label>
+                    <input type="range" value="35">
+
+                    <label>Instructions</label>
+                    <textarea>
+Analyze customer emails and determine the appropriate response.
+                    </textarea>
+
+                    <button class="create-btn full">
+                        Save Configuration
+                    </button>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- AGENTS -->
+        <section id="agents" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>AI Agent Network</h2>
+                    <p>Agents available for your workflows.</p>
+                </div>
+            </div>
+
+            <div class="agent-grid">
+
+                <div class="agent-large">
+                    <div class="agent-avatar purple-bg">R</div>
+                    <h3>Research Agent</h3>
+                    <p>Searches, analyzes and summarizes information.</p>
+                    <div class="agent-stat">12 <small>workflows</small></div>
+                    <span class="active-text">● Online</span>
+                </div>
+
+                <div class="agent-large">
+                    <div class="agent-avatar blue-bg">W</div>
+                    <h3>Writer Agent</h3>
+                    <p>Creates articles, emails and marketing content.</p>
+                    <div class="agent-stat">8 <small>workflows</small></div>
+                    <span class="active-text">● Online</span>
+                </div>
+
+                <div class="agent-large">
+                    <div class="agent-avatar green-bg">A</div>
+                    <h3>Analytics Agent</h3>
+                    <p>Processes data and creates intelligent reports.</p>
+                    <div class="agent-stat">15 <small>workflows</small></div>
+                    <span class="active-text">● Online</span>
+                </div>
+
+                <div class="agent-large">
+                    <div class="agent-avatar orange-bg">S</div>
+                    <h3>Support Agent</h3>
+                    <p>Handles customer requests and support tickets.</p>
+                    <div class="agent-stat">6 <small>workflows</small></div>
+                    <span class="paused-text">● Offline</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RUNS -->
+        <section id="runs" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Workflow Runs</h2>
+                    <p>Monitor recent workflow executions.</p>
+                </div>
+            </div>
+
+            <div class="panel">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Workflow</th>
+                            <th>Started</th>
+                            <th>Duration</th>
+                            <th>Agents</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Email Support Automation</td>
+                            <td>2 min ago</td>
+                            <td>18 sec</td>
+                            <td>3</td>
+                            <td><span class="table-success">● Success</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Lead Qualification</td>
+                            <td>5 min ago</td>
+                            <td>24 sec</td>
+                            <td>3</td>
+                            <td><span class="table-success">● Success</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Content Research Pipeline</td>
+                            <td>8 min ago</td>
+                            <td>1m 12s</td>
+                            <td>4</td>
+                            <td><span class="table-warning">● Waiting</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Daily Analytics Report</td>
+                            <td>12 min ago</td>
+                            <td>42 sec</td>
+                            <td>3</td>
+                            <td><span class="table-success">● Success</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPROVALS -->
+        <section id="approvals" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Human Approvals</h2>
+                    <p>Review actions that require human decisions.</p>
+                </div>
+            </div>
+
+            <div class="approval-page">
+
+                <div class="approval-card">
+                    <div class="big-approval-icon">⚠</div>
+                    <div>
+                        <h3>Publish Article</h3>
+                        <p>Content Research Pipeline</p>
+                        <small>Waiting for your approval</small>
+                    </div>
+                    <div>
+                        <button class="reject">Reject</button>
+                        <button class="approve">Approve</button>
+                    </div>
+                </div>
+
+                <div class="approval-card">
+                    <div class="big-approval-icon">💰</div>
+                    <div>
+                        <h3>Approve Refund</h3>
+                        <p>Email Support Automation</p>
+                        <small>Refund amount: $250</small>
+                    </div>
+                    <div>
+                        <button class="reject">Reject</button>
+                        <button class="approve">Approve</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ERRORS -->
+        <section id="errors" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Errors & Retry</h2>
+                    <p>Monitor failed workflow executions.</p>
+                </div>
+            </div>
+
+            <div class="error-card">
+
+                <div class="error-icon">!</div>
+
+                <div>
+                    <h3>CRM Connection Failed</h3>
+                    <p>Email Support Automation</p>
+                    <small>Failed 4 minutes ago</small>
+                </div>
+
+                <span class="retry-count">2 retries</span>
+
+                <button class="retry-btn">↻ Retry</button>
+
+            </div>
+
+            <div class="error-card">
+
+                <div class="error-icon">!</div>
+
+                <div>
+                    <h3>Agent Timeout</h3>
+                    <p>Content Research Pipeline</p>
+                    <small>Failed 18 minutes ago</small>
+                </div>
+
+                <span class="retry-count">1 retry</span>
+
+                <button class="retry-btn">↻ Retry</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTEGRATIONS -->
+        <section id="integrations" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Integrations</h2>
+                    <p>Connect external services to your workflows.</p>
+                </div>
+            </div>
+
+            <div class="integration-grid">
+
+                <div class="integration">
+                    <strong>Gmail</strong>
+                    <span>✓ Connected</span>
+                </div>
+
+                <div class="integration">
+                    <strong>Slack</strong>
+                    <span>✓ Connected</span>
+                </div>
+
+                <div class="integration">
+                    <strong>Google Sheets</strong>
+                    <span>✓ Connected</span>
+                </div>
+
+                <div class="integration">
+                    <strong>CRM</strong>
+                    <span>Connect →</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SETTINGS -->
+        <section id="settings" class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Settings</h2>
+                    <p>Configure your AgentFlow workspace.</p>
+                </div>
+            </div>
+
+            <div class="settings-panel">
+
+                <label>Workspace Name</label>
+                <input type="text" value="AI Team Workspace">
+
+                <label>Default AI Model</label>
+                <select>
+                    <option>GPT-5.6</option>
+                    <option>GPT-5</option>
+                </select>
+
+                <label>Automatic Retry</label>
+
+                <div class="toggle active-toggle">
+                    <div></div>
+                </div>
+
+                <button class="create-btn">Save Changes</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- CREATE WORKFLOW MODAL -->
+
+<div class="modal" id="workflowModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeModal()">×</button>
+
+        <div class="modal-icon">✦</div>
+
+        <h2>Create New Workflow</h2>
+
+        <p>Start building a new AI-powered automation.</p>
+
+        <label>Workflow Name</label>
+        <input id="workflowName" type="text" placeholder="e.g. Customer Support">
+
+        <label>Description</label>
+        <textarea placeholder="What should this workflow do?"></textarea>
+
+        <div class="modal-actions">
+            <button class="secondary-btn" onclick="closeModal()">Cancel</button>
+            <button class="create-btn" onclick="createWorkflow()">Create Workflow</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="toast" id="toast">
+    ✓ Workflow created successfully
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
